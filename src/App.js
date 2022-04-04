@@ -7,12 +7,12 @@ import {Range} from 'react-range';
 function App() {
   const DAFAULT_FILTER = {
     page: 1,
-    pageSize: 8,
+    pageSize: 12,
     symbol: "",
     name: "",
-    status: "SOLD_OUT",
-    totalRaise: [100,200],
-    personalAllocation: [0.07,0.08]
+    status: "",
+    totalRaise: "",
+    personalAllocation: ""
  }
  
   const [data, setData] = useState();
@@ -32,7 +32,6 @@ function App() {
   useEffect(() => {
     getDataTransactions(filter);
   }, []);
-  console.log(data);
   const onSubmitFilters = () => {
     let newFilter = {
       ...filter,
